@@ -6,6 +6,8 @@ import {clerkMiddleware} from "@clerk/express";
 import fs from "fs";
 import path from "path";
 import job from "./lib/cron.js";
+import clerkWebhook from "./webhooks/clerk.webhook.js";
+
 
 
 
@@ -21,10 +23,13 @@ const PORT = process.env.PORT;
 const FRONTEND_URL = process.env.FRONTEND_URL;
 const publicDir =path.join(process.cwd(),"public");
 
+app.use("/api/webhooks/clerk",express.raw({type:"applicaton"}),clerkWebhook);
+
 
 app.use(express.json());
 app.use(cors({origin:FRONTEND_URL,credentials:true}));
 app.use(clerkMiddleware());
+
 
 app.get("/health",(req,res)=>{
     res.status(200).json({ok:true});
