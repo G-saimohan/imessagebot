@@ -7,7 +7,7 @@ const userSchema= new mongoose.Schema({
         required:true,
         unique:true,
     },
-    emali:{
+    email:{
         type:String,
         required:true,
         unique:true,
@@ -22,7 +22,7 @@ const userSchema= new mongoose.Schema({
         default:"",
     },
 
-},{timeStamps:true},); //craetedat or updatedat
+},{timestamps:true},); //craetedat or updatedat
 
 
 const User = mongoose.model("User",userSchema)
