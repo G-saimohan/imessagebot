@@ -1,12 +1,7 @@
-node_modules
-npm-debug.log
+**/node_modules
+**/dist
+**/.env
+**/.env.*
 .git
-.gitignore
-README.md
-.env.local
-.env.*.local
-dist
-build
-.vite
-.eslintignore
 .DS_Store
+npm-debug.log*
