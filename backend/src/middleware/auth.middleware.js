@@ -1,5 +1,5 @@
 import { getAuth } from "@clerk/express";
-import User from "../model/user.model.js";
+import User from "../models/user.model.js";
 import { use } from "react";
 
 export async function protectRoute(req,res,next){
@@ -25,7 +25,7 @@ export async function protectRoute(req,res,next){
     catch(error){
         console.error("Error in protectRoute middleware:",error.message);
         res.status(500).json({message: "Internal server error"});
-        
+
 
 
     }
