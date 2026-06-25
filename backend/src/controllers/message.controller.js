@@ -1,6 +1,6 @@
 import User from "../models/user.model.js";
 import Message from "../models/message.model.js";
-import { hasImageKitConfig, uploadChatMedia } from "../lib/imagekit.js";
+import { hasImagekitConfig, uploadChatMedia } from "../lib/imagekit.js";
 import { getReceiverSocketId } from "../lib/socket.js";
 
 
